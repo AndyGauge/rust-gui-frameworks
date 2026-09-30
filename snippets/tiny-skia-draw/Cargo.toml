@@ -1,0 +1,10 @@
+[package]
+name = "tiny-skia-draw"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+tiny-skia = "0.12"
+
+[workspace]

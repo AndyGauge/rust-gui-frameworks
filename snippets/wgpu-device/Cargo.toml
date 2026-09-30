@@ -1,0 +1,12 @@
+[package]
+name = "wgpu-device"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+wgpu = "30"
+pollster = "0.4"
+winit = "0.30"
+
+[workspace]

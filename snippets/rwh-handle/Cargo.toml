@@ -1,0 +1,11 @@
+[package]
+name = "rwh-handle"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+raw-window-handle = "0.6"
+winit = "0.30"
+
+[workspace]

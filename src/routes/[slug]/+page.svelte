@@ -7,6 +7,9 @@
   import Giscus from 'sveltekitbook/Giscus.svelte';
   import PageMeta from 'sveltekitbook/PageMeta.svelte';
   import Timeline from '$lib/Timeline.svelte';
+  import Walkthrough from '$lib/Walkthrough.svelte';
+  import EcoStrip from '$lib/EcoStrip.svelte';
+  import { walkFor } from '$lib/walkthroughs.js';
   import { TITLE, GISCUS, SITE_URL } from '$lib/config.js';
   
 
@@ -14,6 +17,7 @@
   let section = $derived(data.section);
   let nextSection = $derived(next(section.num));
   let prevSection = $derived(prev(section.num));
+  let walk = $derived(walkFor(section.id));
   let position = $derived(section.orderIndex + 1);
   let total = flat.length;
 
@@ -103,8 +107,16 @@
       <p class="gesture">{@html md(section.gesture, mdOpts)}</p>
     {/if}
 
-    {#if section.body}
+    {#if section.body && !walk.length}
       <div class="body-text">{@html mdBlock(section.body, mdOpts)}</div>
+    {/if}
+
+    {#if walk.length}
+      <Walkthrough parts={walk} />
+    {/if}
+
+    {#if section.crates?.length}
+      <EcoStrip crates={section.crates} />
     {/if}
 
     {#if section.citation || section.link}

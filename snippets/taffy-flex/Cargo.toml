@@ -1,0 +1,10 @@
+[package]
+name = "taffy-flex"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+taffy = "0.14"
+
+[workspace]

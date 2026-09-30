@@ -1,0 +1,10 @@
+[package]
+name = "makepad-app"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+makepad-widgets = "1.0"
+
+[workspace]

@@ -1,0 +1,10 @@
+[package]
+name = "accesskit-tree"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+accesskit = "0.25"
+
+[workspace]

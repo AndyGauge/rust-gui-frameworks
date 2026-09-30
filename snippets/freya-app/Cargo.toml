@@ -1,0 +1,10 @@
+[package]
+name = "freya-app"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+freya = "0.4"
+
+[workspace]

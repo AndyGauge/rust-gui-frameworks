@@ -1,0 +1,10 @@
+[package]
+name = "cosmic-shape"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+cosmic-text = "0.19"
+
+[workspace]

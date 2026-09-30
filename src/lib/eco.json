@@ -1,0 +1,488 @@
+{
+ "asOf": "2026-09-30",
+ "crates": {
+  "ab_glyph": {
+   "deps": [],
+   "downloads": 44731750,
+   "revdeps": 266,
+   "usedBy": [],
+   "ver": "0.2.32"
+  },
+  "accesskit": {
+   "deps": [],
+   "downloads": 27050583,
+   "revdeps": 220,
+   "usedBy": [
+    "egui",
+    "parley",
+    "blitz-dom"
+   ],
+   "ver": "0.25.1"
+  },
+  "anyrender": {
+   "deps": [
+    "kurbo",
+    "peniko",
+    "raw-window-handle"
+   ],
+   "downloads": 153933,
+   "revdeps": 22,
+   "usedBy": [
+    "dioxus-native"
+   ],
+   "ver": "0.13.0"
+  },
+  "blitz-dom": {
+   "deps": [
+    "accesskit",
+    "objc2",
+    "parley",
+    "skrifa",
+    "stylo",
+    "taffy"
+   ],
+   "downloads": 265805,
+   "revdeps": 23,
+   "usedBy": [
+    "dioxus-native"
+   ],
+   "ver": "0.2.4"
+  },
+  "cosmic-text": {
+   "deps": [
+    "fontdb",
+    "harfrust",
+    "skrifa",
+    "swash"
+   ],
+   "downloads": 9398544,
+   "revdeps": 193,
+   "usedBy": [
+    "gpui"
+   ],
+   "ver": "0.19.0"
+  },
+  "dioxus": {
+   "deps": [
+    "dioxus-native"
+   ],
+   "downloads": 2875226,
+   "revdeps": 439,
+   "usedBy": [],
+   "ver": "0.7.10"
+  },
+  "dioxus-native": {
+   "deps": [
+    "anyrender",
+    "anyrender_vello",
+    "blitz-dom",
+    "blitz-paint",
+    "blitz-shell",
+    "winit"
+   ],
+   "downloads": 38693,
+   "revdeps": 4,
+   "usedBy": [
+    "dioxus"
+   ],
+   "ver": "0.7.10"
+  },
+  "druid": {
+   "deps": [
+    "resvg",
+    "tiny-skia"
+   ],
+   "downloads": 310957,
+   "revdeps": 29,
+   "usedBy": [],
+   "ver": "0.8.3"
+  },
+  "eframe": {
+   "deps": [
+    "egui",
+    "egui-wgpu",
+    "egui-winit",
+    "glow",
+    "glutin",
+    "js-sys",
+    "objc2",
+    "raw-window-handle",
+    "wasm-bindgen",
+    "web-sys",
+    "wgpu",
+    "winit"
+   ],
+   "downloads": 19250978,
+   "revdeps": 1065,
+   "usedBy": [],
+   "ver": "0.36.2"
+  },
+  "egui": {
+   "deps": [
+    "accesskit",
+    "epaint",
+    "web-sys"
+   ],
+   "downloads": 24817180,
+   "revdeps": 1236,
+   "usedBy": [
+    "eframe"
+   ],
+   "ver": "0.36.2"
+  },
+  "floem": {
+   "deps": [
+    "peniko",
+    "raw-window-handle",
+    "taffy",
+    "wgpu"
+   ],
+   "downloads": 43148,
+   "revdeps": 11,
+   "usedBy": [],
+   "ver": "0.2.0"
+  },
+  "freya": {
+   "deps": [],
+   "downloads": 43045,
+   "revdeps": 13,
+   "usedBy": [],
+   "ver": "0.4.3"
+  },
+  "glutin": {
+   "deps": [
+    "objc2",
+    "raw-window-handle"
+   ],
+   "downloads": 33123906,
+   "revdeps": 260,
+   "usedBy": [
+    "eframe"
+   ],
+   "ver": "0.32.3"
+  },
+  "gpui": {
+   "deps": [
+    "cosmic-text",
+    "lyon",
+    "objc2",
+    "raw-window-handle",
+    "resvg",
+    "taffy",
+    "wayland-client",
+    "windows",
+    "x11rb"
+   ],
+   "downloads": 315040,
+   "revdeps": 127,
+   "usedBy": [],
+   "ver": "0.2.2"
+  },
+  "iced": {
+   "deps": [
+    "iced_winit"
+   ],
+   "downloads": 2851152,
+   "revdeps": 385,
+   "usedBy": [],
+   "ver": "0.14.0"
+  },
+  "kurbo": {
+   "deps": [],
+   "downloads": 48441432,
+   "revdeps": 265,
+   "usedBy": [
+    "piet",
+    "anyrender",
+    "peniko"
+   ],
+   "ver": "0.13.1"
+  },
+  "leptos": {
+   "deps": [
+    "wasm-bindgen",
+    "web-sys"
+   ],
+   "downloads": 4944142,
+   "revdeps": 472,
+   "usedBy": [],
+   "ver": "0.8.21"
+  },
+  "makepad-widgets": {
+   "deps": [],
+   "downloads": 19444,
+   "revdeps": 8,
+   "usedBy": [],
+   "ver": "1.0.0"
+  },
+  "parley": {
+   "deps": [
+    "accesskit",
+    "fontique",
+    "harfrust",
+    "skrifa"
+   ],
+   "downloads": 3411543,
+   "revdeps": 93,
+   "usedBy": [
+    "blitz-dom"
+   ],
+   "ver": "0.11.1"
+  },
+  "peniko": {
+   "deps": [
+    "kurbo"
+   ],
+   "downloads": 6334319,
+   "revdeps": 109,
+   "usedBy": [
+    "vello",
+    "floem",
+    "anyrender"
+   ],
+   "ver": "0.6.1"
+  },
+  "piet": {
+   "deps": [
+    "kurbo"
+   ],
+   "downloads": 1986093,
+   "revdeps": 29,
+   "usedBy": [],
+   "ver": "0.8.0"
+  },
+  "raw-window-handle": {
+   "deps": [
+    "wasm-bindgen"
+   ],
+   "downloads": 107696821,
+   "revdeps": 789,
+   "usedBy": [
+    "glutin",
+    "winit",
+    "wgpu",
+    "tauri",
+    "eframe",
+    "slint",
+    "gpui",
+    "floem",
+    "anyrender",
+    "tao",
+    "wry"
+   ],
+   "ver": "0.6.2"
+  },
+  "resvg": {
+   "deps": [
+    "tiny-skia"
+   ],
+   "downloads": 27728490,
+   "revdeps": 640,
+   "usedBy": [
+    "druid",
+    "gpui"
+   ],
+   "ver": "0.48.1"
+  },
+  "rusttype": {
+   "deps": [],
+   "downloads": 17181891,
+   "revdeps": 226,
+   "usedBy": [],
+   "ver": "0.9.3"
+  },
+  "skrifa": {
+   "deps": [],
+   "downloads": 30115920,
+   "revdeps": 180,
+   "usedBy": [
+    "vello",
+    "swash",
+    "cosmic-text",
+    "parley",
+    "blitz-dom"
+   ],
+   "ver": "0.47.0"
+  },
+  "slint": {
+   "deps": [
+    "i-slint-backend-winit",
+    "i-slint-core",
+    "i-slint-renderer-femtovg",
+    "i-slint-renderer-skia",
+    "raw-window-handle",
+    "wgpu"
+   ],
+   "downloads": 1791613,
+   "revdeps": 107,
+   "usedBy": [],
+   "ver": "1.18.1"
+  },
+  "swash": {
+   "deps": [
+    "skrifa"
+   ],
+   "downloads": 14152080,
+   "revdeps": 132,
+   "usedBy": [
+    "cosmic-text"
+   ],
+   "ver": "0.2.10"
+  },
+  "sycamore": {
+   "deps": [
+    "wasm-bindgen",
+    "web-sys"
+   ],
+   "downloads": 310561,
+   "revdeps": 19,
+   "usedBy": [],
+   "ver": "0.9.3"
+  },
+  "taffy": {
+   "deps": [],
+   "downloads": 14626889,
+   "revdeps": 188,
+   "usedBy": [
+    "gpui",
+    "floem",
+    "blitz-dom"
+   ],
+   "ver": "0.14.0"
+  },
+  "tao": {
+   "deps": [
+    "objc2",
+    "raw-window-handle",
+    "windows"
+   ],
+   "downloads": 35500335,
+   "revdeps": 108,
+   "usedBy": [],
+   "ver": "0.37.1"
+  },
+  "tauri": {
+   "deps": [
+    "objc2",
+    "raw-window-handle",
+    "windows"
+   ],
+   "downloads": 33376499,
+   "revdeps": 680,
+   "usedBy": [],
+   "ver": "2.12.0"
+  },
+  "tiny-skia": {
+   "deps": [],
+   "downloads": 50787946,
+   "revdeps": 482,
+   "usedBy": [
+    "druid",
+    "resvg"
+   ],
+   "ver": "0.12.0"
+  },
+  "vello": {
+   "deps": [
+    "peniko",
+    "skrifa",
+    "wgpu"
+   ],
+   "downloads": 933014,
+   "revdeps": 82,
+   "usedBy": [
+    "xilem"
+   ],
+   "ver": "0.10.0"
+  },
+  "wasm-bindgen": {
+   "deps": [],
+   "downloads": 555318378,
+   "revdeps": 5412,
+   "usedBy": [
+    "winit",
+    "raw-window-handle",
+    "yew",
+    "leptos",
+    "wgpu",
+    "eframe",
+    "sycamore"
+   ],
+   "ver": "0.2.129"
+  },
+  "wgpu": {
+   "deps": [
+    "js-sys",
+    "naga",
+    "raw-window-handle",
+    "wasm-bindgen",
+    "web-sys",
+    "wgpu-core",
+    "wgpu-hal"
+   ],
+   "downloads": 37749674,
+   "revdeps": 1686,
+   "usedBy": [
+    "eframe",
+    "slint",
+    "vello",
+    "floem"
+   ],
+   "ver": "30.0.1"
+  },
+  "winit": {
+   "deps": [
+    "js-sys",
+    "objc2",
+    "raw-window-handle",
+    "smithay-client-toolkit",
+    "wasm-bindgen",
+    "wayland-client",
+    "web-sys",
+    "x11rb"
+   ],
+   "downloads": 55410735,
+   "revdeps": 1446,
+   "usedBy": [
+    "eframe",
+    "xilem",
+    "dioxus-native"
+   ],
+   "ver": "0.30.13"
+  },
+  "wry": {
+   "deps": [
+    "objc2",
+    "raw-window-handle",
+    "windows"
+   ],
+   "downloads": 36216933,
+   "revdeps": 110,
+   "usedBy": [],
+   "ver": "0.57.0"
+  },
+  "xilem": {
+   "deps": [
+    "masonry",
+    "masonry_winit",
+    "vello",
+    "winit"
+   ],
+   "downloads": 11132,
+   "revdeps": 6,
+   "usedBy": [],
+   "ver": "0.4.0"
+  },
+  "yew": {
+   "deps": [
+    "js-sys",
+    "wasm-bindgen",
+    "web-sys"
+   ],
+   "downloads": 4986271,
+   "revdeps": 318,
+   "usedBy": [],
+   "ver": "0.23.0"
+  }
+ }
+}

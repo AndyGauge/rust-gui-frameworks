@@ -1,0 +1,19 @@
+[package]
+name = "tauri-app"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = "2"
+
+[dependencies]
+tauri = "2"
+serde = { version = "1", features = ["derive"] }
+raw-window-handle = "0.6"
+
+[workspace]

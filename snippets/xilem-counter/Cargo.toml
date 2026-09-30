@@ -1,0 +1,10 @@
+[package]
+name = "xilem-counter"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+xilem = "0.4"
+
+[workspace]

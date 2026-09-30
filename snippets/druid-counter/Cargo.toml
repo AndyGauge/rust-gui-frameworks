@@ -1,0 +1,10 @@
+[package]
+name = "druid-counter"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+druid = "0.8"
+
+[workspace]

@@ -19,7 +19,8 @@ export const TOPIC_ICONS = {
   Accessibility: '♿',
   Framework: '🧩',
   Web: '🌐',
-  Language: '🦀'
+  Language: '🦀',
+  Ecosystem: '🕸️'
 };
 
 const CRATES = 'crates.io first publish.';
@@ -28,6 +29,7 @@ const raw = [
   // ---- Windowing ----
   {
     title: 'glutin: a window and a GL context',
+    id: 'glutin', crates: ['glutin'],
     status: -0.4, statusNote: 'Superseded by winit plus helper crates',
     year: 2014, month: 11, topic: 'Windowing', kind: 'primitive',
     gesture: 'Before any toolkit, someone had to open a window from Rust.',
@@ -36,6 +38,7 @@ const raw = [
   },
   {
     title: 'winit: the window everyone borrows',
+    id: 'winit', crates: ['winit'],
     status: 0.9, statusNote: 'Near-universal, but 0.31 is stuck in beta',
     year: 2016, month: 3, topic: 'Windowing', kind: 'primitive',
     gesture: 'Almost every framework in this book stands on the same window library.',
@@ -45,6 +48,7 @@ const raw = [
   },
   {
     title: 'raw-window-handle: the handshake',
+    id: 'raw-window-handle', crates: ['raw-window-handle'],
     status: 0.9, statusNote: 'Ubiquitous plumbing',
     year: 2019, month: 7, topic: 'Windowing', kind: 'primitive',
     gesture: 'A tiny crate that lets any window talk to any renderer.',
@@ -55,6 +59,7 @@ const raw = [
   // ---- Web ----
   {
     title: 'Yew: Rust in the browser',
+    id: 'yew', crates: ['yew'],
     status: 0.0, statusNote: 'Maintained, overshadowed by Leptos',
     year: 2017, month: 12, topic: 'Web', kind: 'framework',
     gesture: 'The first popular Rust component framework targeted the DOM, not a native window.',
@@ -63,6 +68,7 @@ const raw = [
   },
   {
     title: 'wasm-bindgen: Rust meets the DOM',
+    id: 'wasm-bindgen', crates: ['wasm-bindgen'],
     status: 1.0, statusNote: 'Foundational and universal',
     year: 2018, month: 3, topic: 'Web', kind: 'primitive',
     gesture: 'The bridge that makes every Rust web UI framework possible.',
@@ -71,6 +77,7 @@ const raw = [
   },
   {
     title: 'Dioxus: React-shaped Rust',
+    id: 'dioxus', crates: ['dioxus'],
     status: 0.6, statusNote: 'Growing and widely used',
     year: 2021, month: 1, topic: 'Framework', kind: 'framework',
     gesture: 'One component model, several renderers.',
@@ -79,6 +86,7 @@ const raw = [
   },
   {
     title: 'Leptos: fine-grained reactivity',
+    id: 'leptos', crates: ['leptos'],
     status: 0.6, statusNote: 'Leading Rust web framework',
     year: 2022, month: 10, topic: 'Web', kind: 'framework',
     gesture: 'Signals, SSR and hydration, written in Rust.',
@@ -89,6 +97,7 @@ const raw = [
   // ---- Rendering ----
   {
     title: 'wgpu: the shared GPU layer',
+    id: 'wgpu', crates: ['wgpu'],
     status: 1.0, statusNote: 'The default GPU layer',
     year: 2019, month: 1, topic: 'Rendering', kind: 'primitive',
     gesture: 'One GPU API for Vulkan, Metal, D3D and the browser.',
@@ -97,6 +106,7 @@ const raw = [
   },
   {
     title: 'iced: Elm for Rust',
+    id: 'iced', crates: ['iced'],
     status: 0.5, statusNote: 'Real users via COSMIC; no AccessKit yet',
     year: 2019, month: 5, topic: 'Framework', kind: 'framework',
     gesture: 'A typed, message-driven toolkit that COSMIC is built on.',
@@ -105,6 +115,7 @@ const raw = [
   },
   {
     title: 'Tauri: the webview shell',
+    id: 'tauri', crates: ['tauri', 'tao', 'wry'],
     status: 0.9, statusNote: 'The mainstream desktop choice',
     year: 2019, month: 11, topic: 'Framework', kind: 'framework',
     gesture: 'Ship a web UI with a Rust backend and the system webview.',
@@ -113,7 +124,8 @@ const raw = [
   },
   {
     title: 'egui: immediate mode wins hearts',
-    status: 1.0, statusNote: 'Most downloaded GUI toolkit',
+    id: 'egui', crates: ['egui', 'eframe'],
+    status: 1.0, statusNote: 'Most downloaded native-rendering toolkit',
     year: 2020, month: 5, topic: 'Framework', kind: 'framework',
     gesture: 'Immediate mode made Rust GUIs feel easy.',
     body: 'egui (May 2020, eframe Jan 2021) became the default way to add a quick UI to a Rust tool, game or debugger.',
@@ -121,6 +133,7 @@ const raw = [
   },
   {
     title: 'tiny-skia: a software fallback',
+    id: 'tiny-skia', crates: ['tiny-skia', 'resvg'],
     status: 0.8, statusNote: 'Widely depended on',
     year: 2020, month: 7, topic: 'Rendering', kind: 'primitive',
     gesture: 'Skia-style drawing with no GPU and no C++.',
@@ -129,6 +142,7 @@ const raw = [
   },
   {
     title: 'SixtyFPS becomes Slint',
+    id: 'slint-rename', crates: ['slint'],
     status: 0.6, statusNote: 'Commercially backed, embedded adoption',
     year: 2020, month: 10, topic: 'Framework', kind: 'framework',
     gesture: 'A declarative UI language for embedded and desktop.',
@@ -137,6 +151,7 @@ const raw = [
   },
   {
     title: 'Vello: GPU compute vector rendering',
+    id: 'vello', crates: ['vello', 'peniko', 'kurbo'],
     status: 0.15, statusNote: 'Important but alpha and few direct users',
     year: 2024, month: 3, topic: 'Rendering', kind: 'primitive',
     gesture: 'Drawing paths with compute shaders instead of rasterization.',
@@ -147,6 +162,7 @@ const raw = [
   // ---- Text ----
   {
     title: 'Fonts: rusttype to swash',
+    id: 'fonts', crates: ['rusttype', 'ab_glyph', 'swash', 'skrifa'],
     status: -0.3, statusNote: 'rusttype is deprecated; successors carry on',
     year: 2016, month: 2, topic: 'Text', kind: 'primitive',
     gesture: 'Drawing text is its own ecosystem.',
@@ -155,6 +171,7 @@ const raw = [
   },
   {
     title: 'cosmic-text: shaping and layout',
+    id: 'cosmic-text', crates: ['cosmic-text'],
     status: 0.7, statusNote: 'Widely adopted text stack',
     year: 2022, month: 10, topic: 'Text', kind: 'primitive',
     gesture: 'System76 builds a text engine for its own desktop.',
@@ -163,6 +180,7 @@ const raw = [
   },
   {
     title: 'Parley: the Linebender text stack',
+    id: 'parley', crates: ['parley'],
     status: 0.2, statusNote: 'Growing, tied to Linebender',
     year: 2024, month: 5, topic: 'Text', kind: 'primitive',
     gesture: 'Text layout for Xilem and friends.',
@@ -173,6 +191,7 @@ const raw = [
   // ---- Layout ----
   {
     title: 'stretch to Taffy: one layout engine',
+    id: 'taffy', crates: ['taffy'],
     status: 0.9, statusNote: 'Shared across many frameworks',
     year: 2022, month: 6, topic: 'Layout', kind: 'primitive',
     gesture: 'CSS flexbox and grid as a reusable library.',
@@ -183,6 +202,7 @@ const raw = [
   // ---- Accessibility ----
   {
     title: 'AccessKit: one accessibility layer',
+    id: 'accesskit', crates: ['accesskit'],
     status: 0.8, statusNote: 'Widely adopted, one maintainer',
     year: 2021, month: 12, topic: 'Accessibility', kind: 'primitive',
     gesture: 'Screen-reader support shouldn’t be rebuilt per framework.',
@@ -194,6 +214,7 @@ const raw = [
   // ---- Frameworks ----
   {
     title: 'Druid, the retired bet',
+    id: 'druid', crates: ['druid', 'piet'],
     status: -0.9, statusNote: 'Sunset',
     year: 2018, month: 11, topic: 'Framework', kind: 'framework',
     gesture: 'The “official” Rust GUI effort taught the field what to reuse.',
@@ -202,6 +223,7 @@ const raw = [
   },
   {
     title: 'gpui: Zed’s framework',
+    id: 'gpui', crates: ['gpui'],
     status: 0.4, statusNote: 'Powers Zed; small outside ecosystem',
     year: 2022, month: 6, topic: 'Framework', kind: 'framework',
     gesture: 'A GUI framework built to make an editor fast.',
@@ -210,6 +232,7 @@ const raw = [
   },
   {
     title: 'Makepad and Freya',
+    id: 'makepad-freya', crates: ['makepad-widgets', 'freya'],
     status: 0.05, statusNote: 'Niche, active, pre-stable',
     year: 2022, month: 11, topic: 'Framework', kind: 'framework',
     gesture: 'Two more GPU-first takes on the same problem.',
@@ -218,6 +241,7 @@ const raw = [
   },
   {
     title: 'Floem: from the Lapce editor',
+    id: 'floem', crates: ['floem'],
     status: 0.0, statusNote: 'Niche, small user base',
     year: 2023, month: 11, topic: 'Framework', kind: 'framework',
     gesture: 'A reactive native toolkit pulled out of a code editor.',
@@ -226,6 +250,7 @@ const raw = [
   },
   {
     title: 'Xilem: the Linebender rewrite',
+    id: 'xilem', crates: ['xilem'],
     status: 0.1, statusNote: 'Promising, pre-1.0, few users',
     year: 2024, month: 5, topic: 'Framework', kind: 'framework',
     gesture: 'Reactive views on top of Masonry, Vello and Parley.',
@@ -234,6 +259,7 @@ const raw = [
   },
   {
     title: 'Blitz and Dioxus Native',
+    id: 'blitz', crates: ['dioxus-native', 'blitz-dom', 'anyrender'],
     status: 0.0, statusNote: 'Early beta, tiny download base',
     year: 2025, month: 4, topic: 'Framework', kind: 'framework',
     gesture: 'A browser-less HTML/CSS renderer for native Dioxus.',
@@ -243,6 +269,7 @@ const raw = [
 
   {
     title: 'Rust 1.0',
+    id: 'rust-1-0', crates: [],
     year: 2015, month: 5, topic: 'Language', kind: 'primitive', stable: true,
     status: 1.0, statusNote: 'The foundation',
     gesture: 'Nothing in this book exists before Rust promises not to break.',
@@ -251,6 +278,7 @@ const raw = [
   },
   {
     title: 'Tauri 1.0',
+    id: 'tauri-1-0', crates: ['tauri'],
     year: 2022, month: 6, topic: 'Framework', kind: 'framework', stable: true,
     status: 0.9, statusNote: 'Superseded by 2.0, widely deployed',
     gesture: 'The first Rust GUI framework to declare itself stable.',
@@ -260,6 +288,7 @@ const raw = [
   },
   {
     title: 'Slint 1.0',
+    id: 'slint-1-0', crates: ['slint'],
     year: 2023, month: 4, topic: 'Framework', kind: 'framework', stable: true,
     status: 0.6, statusNote: 'Stable API, commercially backed',
     gesture: 'A native toolkit that promised API stability.',
@@ -268,6 +297,7 @@ const raw = [
   },
   {
     title: 'Tauri 2.0',
+    id: 'tauri-2-0', crates: ['tauri'],
     year: 2024, month: 10, topic: 'Framework', kind: 'framework', stable: true,
     status: 0.9, statusNote: 'Mobile and plugin system, mainstream',
     gesture: 'Desktop, then mobile, with a plugin system.',
@@ -277,6 +307,7 @@ const raw = [
   },
   {
     title: 'Makepad 1.0',
+    id: 'makepad-1-0', crates: ['makepad-widgets'],
     year: 2025, month: 5, topic: 'Framework', kind: 'framework', stable: true,
     status: 0.3, statusNote: 'Stable label, small user base',
     gesture: 'A shader-driven toolkit declares 1.0.',
@@ -285,6 +316,7 @@ const raw = [
   },
   {
     title: 'WebGPU ships in every major browser',
+    id: 'webgpu-browsers', crates: ['wgpu'],
     year: 2025, month: 11, topic: 'Rendering', kind: 'primitive', stable: true,
     status: 1.0, statusNote: 'Standardised target for wgpu on the web',
     gesture: 'wgpu’s browser backend stops being a bet.',
@@ -295,7 +327,16 @@ const raw = [
 
   // ---- 2026 ----
   {
+    title: 'Version skew: shared by name, not by version',
+    id: 'version-skew', crates: ['winit', 'wgpu', 'taffy', 'accesskit'],
+    year: 2026, month: 9, topic: 'Ecosystem', kind: 'primitive',
+    gesture: 'Every framework uses the same winit. Almost none use the same wgpu.',
+    body: 'Measured on 30 Sep 2026 by resolving the latest release of each framework and reading its lockfile. The layers look shared on a diagram, but each framework pins its own version of them.',
+    citation: 'Lockfiles generated by the book’s own snippets (snippets/meta.json).'
+  },
+  {
     title: 'Dioxus joins Cognition',
+    id: 'dioxus-cognition', crates: ['dioxus', 'taffy'],
     year: 2026, month: 9, topic: 'Framework', kind: 'framework',
     status: 0.6, statusNote: 'Team now employed by Cognition; OSS continues',
     gesture: 'The biggest Rust GUI team now has a company paying for it.',
@@ -305,6 +346,7 @@ const raw = [
   },
   {
     title: 'Tauri gains a winit-gtk4 backend',
+    id: 'tauri-winit-gtk4', crates: ['tauri', 'tao'],
     status: 0.2, statusNote: 'Merged but tied to a beta winit',
     year: 2026, month: 7, topic: 'Windowing', kind: 'primitive',
     gesture: 'Linux’s GTK coupling is still the hard part.',

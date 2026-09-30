@@ -1,0 +1,11 @@
+[package]
+name = "glyph-fonts"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+ab_glyph = "0.2"
+rusttype = "0.9"
+
+[workspace]

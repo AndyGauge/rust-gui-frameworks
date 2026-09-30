@@ -1,0 +1,11 @@
+import { Button, VerticalBox } from "std-widgets.slint";
+
+export component App inherits Window {
+    in-out property <int> counter: 0;
+    callback clicked();
+
+    VerticalBox {
+        Text { text: "Clicked \{root.counter} times"; }
+        Button { text: "Click me"; clicked => { root.clicked(); } }
+    }
+}

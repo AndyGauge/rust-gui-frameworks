@@ -1,0 +1,10 @@
+[package]
+name = "floem-counter"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+floem = "0.2"
+
+[workspace]
