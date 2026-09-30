@@ -315,14 +315,14 @@ const raw = [
     citation: 'crates.io: makepad-widgets 1.0.0, 2025-05-13.'
   },
   {
-    title: 'WebGPU ships in every major browser',
+    title: 'WebGPU reaches every major browser, unevenly',
     id: 'webgpu-browsers', crates: ['wgpu'],
-    year: 2025, month: 11, topic: 'Rendering', kind: 'primitive', stable: true,
-    status: 1.0, statusNote: 'Standardised target for wgpu on the web',
-    gesture: 'wgpu’s browser backend stops being a bet.',
-    body: 'Chrome and Edge had shipped WebGPU in version 113 (2023). Firefox 141 and Safari 26 completed the set in 2025. The standard is the model wgpu implements, so the web target became reliable for Rust UI frameworks.',
-    citation: 'web.dev, “WebGPU is now supported in major browsers.”',
-    link: 'https://web.dev/blog/webgpu-supported-major-browsers'
+    year: 2025, month: 11, topic: 'Rendering', kind: 'primitive',
+    status: 0.6, statusNote: 'Standardised, but platform- and architecture-dependent',
+    gesture: 'wgpu’s browser backend stops being a bet, but only for some users.',
+    body: 'Chrome, Edge, Firefox and Safari all ship WebGPU somewhere. Support still varies by OS, GPU and architecture, and browsers update unevenly.',
+    citation: 'web.dev, “WebGPU is now supported in major browsers”; gpuweb Implementation Status wiki, 13 Aug 2026.',
+    link: 'https://github.com/gpuweb/gpuweb/wiki/Implementation-Status'
   },
 
   // ---- 2026 ----
