@@ -1,3 +1,4 @@
+use book_error::Result;
 use eframe::egui;
 
 #[derive(Default)]
@@ -18,10 +19,11 @@ impl eframe::App for MyApp {
     }
 }
 
-fn main() -> eframe::Result {
+fn main() -> Result<()> {
     eframe::run_native(
         "egui demo",
         eframe::NativeOptions::default(),
         Box::new(|_cc| Ok(Box::<MyApp>::default())),
-    )
+    )?;
+    Ok(())
 }

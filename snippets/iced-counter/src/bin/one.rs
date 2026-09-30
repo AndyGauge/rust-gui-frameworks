@@ -1,3 +1,4 @@
+use book_error::Result;
 use iced::widget::{button, column, text, Column};
 
 #[derive(Default)]
@@ -30,6 +31,7 @@ impl Counter {
     }
 }
 
-fn main() -> iced::Result {
-    iced::run(Counter::update, Counter::view)
+fn main() -> Result<()> {
+    iced::run(Counter::update, Counter::view)?;
+    Ok(())
 }

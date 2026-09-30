@@ -652,6 +652,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+
+[[package]]
 name = "bstr"
 version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2162,6 +2166,7 @@ dependencies = [
 name = "gpui-hello"
 version = "0.0.0"
 dependencies = [
+ "book-error",
  "gpui",
 ]
 

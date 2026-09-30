@@ -1,6 +1,7 @@
+use book_error::Result;
 use taffy::prelude::*;
 
-fn main() -> Result<(), taffy::TaffyError> {
+fn main() -> Result<()> {
     let mut tree: TaffyTree<()> = TaffyTree::new();
 
     let sidebar = tree.new_leaf(Style {

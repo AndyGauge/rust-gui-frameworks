@@ -9,6 +9,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3ded4057c258ba199e2d26386d3af3780957ecaee6c4ef4041c6b4b8b97c0b06"
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+dependencies = [
+ "glutin",
+ "raw-window-handle",
+]
+
+[[package]]
 name = "cfg-if"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -88,6 +96,7 @@ dependencies = [
 name = "glutin-gl"
 version = "0.0.0"
 dependencies = [
+ "book-error",
  "glutin",
  "raw-window-handle",
 ]

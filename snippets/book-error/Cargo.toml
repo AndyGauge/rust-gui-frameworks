@@ -1,0 +1,41 @@
+[package]
+name = "book-error"
+version = "0.0.0"
+edition = "2021"
+publish = false
+description = "One error type shared by every snippet in the book."
+
+# Each framework's error type is an optional dependency behind a feature with
+# the same name, so a snippet only compiles the conversions it needs.
+[dependencies]
+semver = { version = "1", optional = true }
+glutin = { version = "0.32", default-features = false, optional = true }
+winit = { version = "0.30", default-features = false, optional = true }
+raw-window-handle = { version = "0.6", features = ["std"], optional = true }
+wgpu = { version = "30", default-features = false, optional = true }
+taffy = { version = "0.14", optional = true }
+vello = { version = "0.10", optional = true }
+ab_glyph = { version = "0.2", optional = true }
+slint = { version = "1.18", optional = true }
+tauri = { version = "2", optional = true }
+iced = { version = "0.14", optional = true }
+eframe = { version = "0.36", optional = true }
+wasm-bindgen = { version = "0.2", optional = true }
+
+[features]
+default = []
+ab-glyph = ["dep:ab_glyph"]
+eframe = ["dep:eframe"]
+glutin = ["dep:glutin"]
+iced = ["dep:iced"]
+raw-window-handle = ["dep:raw-window-handle"]
+semver = ["dep:semver"]
+slint = ["dep:slint"]
+taffy = ["dep:taffy"]
+tauri = ["dep:tauri"]
+vello = ["dep:vello"]
+wasm = ["dep:wasm-bindgen"]
+wgpu = ["dep:wgpu"]
+winit = ["dep:winit"]
+
+[workspace]

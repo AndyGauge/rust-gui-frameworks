@@ -1,3 +1,5 @@
+use book_error::Result;
+
 slint::slint! {
     export component App inherits Window {
         callback save(string);
@@ -7,13 +9,16 @@ slint::slint! {
     }
 }
 
-fn main() {
-    let ui = App::new().unwrap();
+fn main() -> Result<()> {
+    let ui = App::new()?;
     let weak = ui.as_weak();
     // The .slint side declares callbacks and properties; Rust supplies behaviour.
     ui.on_save(move |text| {
-        let ui = weak.upgrade().unwrap();
-        ui.set_status(format!("saved {} bytes", text.len()).into());
+        // The window may already be gone when this fires; that is not an error.
+        if let Some(ui) = weak.upgrade() {
+            ui.set_status(format!("saved {} bytes", text.len()).into());
+        }
     });
-    ui.run().unwrap();
+    ui.run()?;
+    Ok(())
 }

@@ -4,6 +4,7 @@ Every code block in the book is a real file here, compiled against the crate
 versions in each package's `Cargo.lock`. The pages load these files directly
 (`src/lib/snippets.js`), so what you read is exactly what compiled.
 
+- `book-error/` is the shared error type every snippet depends on (see the "One error type" page). No snippet uses `unwrap()` or `expect()`.
 - One standalone package per topic (separate lockfiles, because frameworks pin
   conflicting dependencies).
 - `python3 verify.py` re-checks every package (plus `wasm32-unknown-unknown` for

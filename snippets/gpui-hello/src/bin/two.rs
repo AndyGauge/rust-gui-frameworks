@@ -1,3 +1,4 @@
+use book_error::Error;
 use gpui::{App, Application, Context, Window, div, prelude::*, rgb};
 
 // The same Tailwind-style vocabulary works for any layout. Under the hood,
@@ -20,6 +21,9 @@ impl Render for Toolbar {
 
 fn main() {
     Application::new().run(|cx: &mut App| {
-        cx.open_window(Default::default(), |_, cx| cx.new(|_| Toolbar)).unwrap();
+        if let Err(e) = cx.open_window(Default::default(), |_, cx| cx.new(|_| Toolbar)) {
+            eprintln!("{}", Error::other(e).report());
+            cx.quit();
+        }
     });
 }

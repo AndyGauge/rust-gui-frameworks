@@ -6,4 +6,4 @@ Using a browser API takes only a few lines, and you must enable each `web-sys` t
 
 ::code wasm-bindgen-dom/src/bin/two.rs
 
-The boundary runs both ways. `extern "C"` blocks import JavaScript functions into Rust and `#[wasm_bindgen]` on a function exports it out. Build tools like Trunk or wasm-pack run the `wasm-bindgen` step for you. Both snippets were compiled for `wasm32-unknown-unknown`. The crate is still `0.2.x`, stable in practice and pre-1.0 on paper.
+A returned error becomes a JavaScript exception, through the `From<Error> for JsValue` impl on the error-handling page, instead of a panic that aborts the module. The boundary runs both ways. `extern "C"` blocks import JavaScript functions into Rust and `#[wasm_bindgen]` on a function exports it out. Build tools like Trunk or wasm-pack run the `wasm-bindgen` step for you. Both snippets were compiled for `wasm32-unknown-unknown`. The crate is still `0.2.x`, stable in practice and pre-1.0 on paper.

@@ -13,7 +13,7 @@ WASM = {"yew-counter","leptos-counter","wasm-bindgen-dom","wgpu-web"}
 RUN = {
     "semver-rust1": ["one","two"], "wgpu-device": ["one","two"], "taffy-flex": ["one","two"],
     "accesskit-tree": ["one","two"], "cosmic-shape": ["one","two"], "parley-layout": ["one","two"],
-    "vello-scene": ["one"], "glutin-gl": ["two"], "egui-app": ["two"],
+    "book-error": ["demo"], "vello-scene": ["one"], "glutin-gl": ["two"], "egui-app": ["two"],
 }
 def sh(cmd, cwd):
     return subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
@@ -21,7 +21,10 @@ def sh(cmd, cwd):
 meta, matrix = {}, {}
 for d in sorted(os.listdir(".")):
     if not os.path.isfile(f"{d}/Cargo.toml"): continue
-    args = ["cargo","check","--quiet"] + ([] if d in ("tauri-app","slint-file","wgpu-web") else ["--bins"])
+    if d == "book-error":
+        args = ["cargo","check","--quiet","--all-features"]
+    else:
+        args = ["cargo","check","--quiet"] + ([] if d in ("tauri-app","slint-file","wgpu-web") else ["--bins"])
     ok = sh(args, d).returncode == 0
     if d in WASM:
         ok = ok and sh(args + ["--target","wasm32-unknown-unknown"], d).returncode == 0
@@ -29,12 +32,13 @@ for d in sorted(os.listdir(".")):
     vers = {}
     for name, ver in re.findall(r'name = "([^"]+)"\nversion = "([^"]+)"', lock):
         if name in WATCH: vers.setdefault(name, []).append(ver)
-    direct = re.findall(r'^([a-z0-9_-]+)\s*=\s*(?:"([^"]+)"|\{[^}]*version\s*=\s*"([^"]+)")', open(f"{d}/Cargo.toml").read().split("[dependencies]")[1].split("[workspace]")[0], re.M)
+    direct = re.findall(r'^([a-z0-9_-]+)\s*=\s*(?:"([^"]+)"|\{[^}]*?version\s*=\s*"([^"]+)")', open(f"{d}/Cargo.toml").read().split("[dependencies]")[1].split("[workspace]")[0].split("[build-dependencies]")[0], re.M)
     outs = {}
     for b in RUN.get(d, []):
         r = sh(["cargo","run","--quiet","--bin",b], d)
         outs[b] = (r.stdout + r.stderr).strip() if r.returncode == 0 else None
-    meta[d] = {"ok": ok, "deps": {n:(v1 or v2) for n,v1,v2 in direct}, "output": outs}
+    # book-error is scaffolding shared by every snippet, not a dependency worth showing.
+    meta[d] = {"ok": ok, "deps": {} if d == "book-error" else {n:(v1 or v2) for n,v1,v2 in direct if n != "book-error"}, "output": outs}
     matrix[d] = vers
     print(d, "ok" if ok else "FAILED", flush=True)
 

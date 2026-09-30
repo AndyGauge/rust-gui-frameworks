@@ -5,6 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
+book-error = { path = "../book-error", features = ["wgpu"] }
 wgpu = "30"
 pollster = "0.4"
 winit = "0.30"

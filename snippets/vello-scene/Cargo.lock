@@ -75,6 +75,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+dependencies = [
+ "vello",
+]
+
+[[package]]
 name = "bumpalo"
 version = "3.20.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1017,6 +1024,7 @@ dependencies = [
 name = "vello-scene"
 version = "0.0.0"
 dependencies = [
+ "book-error",
  "vello",
 ]
 

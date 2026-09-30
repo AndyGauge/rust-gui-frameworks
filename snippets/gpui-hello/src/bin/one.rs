@@ -1,3 +1,4 @@
+use book_error::Error;
 use gpui::{App, Application, Bounds, Context, Window, WindowBounds, WindowOptions, div, prelude::*, px, rgb, size};
 
 struct Counter {
@@ -33,11 +34,13 @@ impl Render for Counter {
 fn main() {
     Application::new().run(|cx: &mut App| {
         let bounds = Bounds::centered(None, size(px(400.), px(300.)), cx);
-        cx.open_window(
-            WindowOptions { window_bounds: Some(WindowBounds::Windowed(bounds)), ..Default::default() },
-            |_, cx| cx.new(|_| Counter { count: 0 }),
-        )
-        .unwrap();
+        let options = WindowOptions { window_bounds: Some(WindowBounds::Windowed(bounds)), ..Default::default() };
+        // The startup closure returns (), so report the failure and quit the app.
+        if let Err(e) = cx.open_window(options, |_, cx| cx.new(|_| Counter { count: 0 })) {
+            eprintln!("{}", Error::other(e).report());
+            cx.quit();
+            return;
+        }
         cx.activate(true);
     });
 }

@@ -5,6 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
+book-error = { path = "../book-error" }
 tiny-skia = "0.12"
 
 [workspace]

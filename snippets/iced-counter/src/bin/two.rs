@@ -1,3 +1,4 @@
+use book_error::Result;
 use iced::time::{self, Duration};
 use iced::widget::text;
 use iced::{Element, Subscription};
@@ -27,8 +28,9 @@ impl Clock {
     }
 }
 
-fn main() -> iced::Result {
+fn main() -> Result<()> {
     iced::application(|| Clock { ticks: 0 }, Clock::update, Clock::view)
         .subscription(Clock::subscription)
-        .run()
+        .run()?;
+    Ok(())
 }

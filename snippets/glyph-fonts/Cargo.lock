@@ -19,10 +19,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618"
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+dependencies = [
+ "ab_glyph",
+]
+
+[[package]]
 name = "glyph-fonts"
 version = "0.0.0"
 dependencies = [
  "ab_glyph",
+ "book-error",
  "rusttype",
 ]
 

@@ -1,5 +1,5 @@
+use book_error::Result;
 use xilem::view::{flex_col, label, text_button};
-use xilem::winit::error::EventLoopError;
 use xilem::{EventLoop, WidgetView, WindowOptions, Xilem};
 
 struct AppState {
@@ -15,7 +15,7 @@ fn app_logic(state: &mut AppState) -> impl WidgetView<AppState> + use<> {
     ))
 }
 
-fn main() -> Result<(), EventLoopError> {
+fn main() -> Result<()> {
     let app = Xilem::new_simple(AppState { count: 0 }, app_logic, WindowOptions::new("Counter"));
     app.run_in(EventLoop::with_user_event())?;
     Ok(())

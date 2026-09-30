@@ -1,3 +1,4 @@
+use book_error::{Error, Result};
 use druid::widget::{Button, Flex, Label};
 use druid::{AppLauncher, Widget, WidgetExt, WindowDesc};
 
@@ -7,8 +8,9 @@ fn ui() -> impl Widget<u32> {
     Flex::column().with_child(label).with_child(button)
 }
 
-fn main() {
+fn main() -> Result<()> {
     AppLauncher::with_window(WindowDesc::new(ui()).title("druid"))
         .launch(0)
-        .unwrap();
+        .map_err(Error::other)?;
+    Ok(())
 }

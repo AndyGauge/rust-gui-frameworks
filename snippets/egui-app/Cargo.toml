@@ -5,6 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
+book-error = { path = "../book-error", features = ["eframe"] }
 eframe = "0.36"
 
 [workspace]

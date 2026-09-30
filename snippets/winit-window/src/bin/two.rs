@@ -1,3 +1,4 @@
+use book_error::{Error, Result};
 use winit::application::ApplicationHandler;
 use winit::dpi::PhysicalSize;
 use winit::event::WindowEvent;
@@ -7,11 +8,18 @@ use winit::window::{Window, WindowId};
 struct App {
     window: Option<Window>,
     size: PhysicalSize<u32>,
+    error: Option<Error>,
 }
 
 impl ApplicationHandler for App {
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
-        self.window = Some(event_loop.create_window(Window::default_attributes()).unwrap());
+        match event_loop.create_window(Window::default_attributes()) {
+            Ok(window) => self.window = Some(window),
+            Err(e) => {
+                self.error = Some(e.into());
+                event_loop.exit();
+            }
+        }
     }
 
     fn window_event(&mut self, event_loop: &ActiveEventLoop, _: WindowId, event: WindowEvent) {
@@ -20,8 +28,10 @@ impl ApplicationHandler for App {
             WindowEvent::Resized(size) => self.size = size,
             // The toolkit paints here, then asks for the next frame if animating.
             WindowEvent::RedrawRequested => {
-                let scale = self.window.as_ref().unwrap().scale_factor();
-                println!("paint {}x{} @ {scale}x", self.size.width, self.size.height);
+                if let Some(window) = &self.window {
+                    let scale = window.scale_factor();
+                    println!("paint {}x{} @ {scale}x", self.size.width, self.size.height);
+                }
             }
             WindowEvent::CloseRequested => event_loop.exit(),
             _ => {}
@@ -29,7 +39,8 @@ impl ApplicationHandler for App {
     }
 }
 
-fn main() {
-    let mut app = App { window: None, size: PhysicalSize::new(0, 0) };
-    EventLoop::new().unwrap().run_app(&mut app).unwrap();
+fn main() -> Result<()> {
+    let mut app = App { window: None, size: PhysicalSize::new(0, 0), error: None };
+    EventLoop::new()?.run_app(&mut app)?;
+    app.error.take().map_or(Ok(()), Err)
 }

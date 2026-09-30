@@ -1,6 +1,7 @@
+use book_error::Result;
 use taffy::prelude::*;
 
-fn main() -> Result<(), taffy::TaffyError> {
+fn main() -> Result<()> {
     let mut tree: TaffyTree<&str> = TaffyTree::new();
 
     // A text leaf carries *context*; taffy asks us how big it wants to be.

@@ -5,6 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
+book-error = { path = "../book-error", features = ["glutin", "raw-window-handle"] }
 glutin = "0.32"
 raw-window-handle = "0.6"
 

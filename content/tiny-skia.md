@@ -2,7 +2,7 @@ tiny-skia is a pure-Rust CPU rasterizer that covers a subset of Skia's feature s
 
 ::code tiny-skia-draw/src/bin/one.rs
 
-Gradients, strokes and blends work the same way. Because it is deterministic and dependency-free it is also used as a reference renderer in tests.
+Its constructors return `Option` rather than `Result`, so the snippets use `.context(...)` to turn a `None` into an error that says what failed. Gradients, strokes and blends work the same way. Because it is deterministic and dependency-free it is also used as a reference renderer in tests.
 
 ::code tiny-skia-draw/src/bin/two.rs
 

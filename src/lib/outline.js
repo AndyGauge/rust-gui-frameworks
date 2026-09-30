@@ -327,6 +327,14 @@ const raw = [
 
   // ---- 2026 ----
   {
+    title: 'One error type for every layer',
+    id: 'error-handling', crates: [],
+    year: 2026, month: 9, topic: 'Language', kind: 'primitive',
+    gesture: 'Every framework has its own error type. Your application needs exactly one.',
+    body: 'How every snippet in this book handles failure without unwrap(), through a shared error enum, From impls and a context trait.',
+    citation: 'snippets/book-error, compiled with all features by snippets/verify.py.'
+  },
+  {
     title: 'Version skew: shared by name, not by version',
     id: 'version-skew', crates: ['winit', 'wgpu', 'taffy', 'accesskit'],
     year: 2026, month: 9, topic: 'Ecosystem', kind: 'primitive',

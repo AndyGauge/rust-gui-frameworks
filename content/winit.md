@@ -2,7 +2,7 @@ winit creates windows and delivers input: keyboard, mouse, touch, resize, close.
 
 ::code winit-window/src/bin/one.rs
 
-Version 0.30 replaced the old closure-based event loop with the `ApplicationHandler` trait. Windows are created in `resumed` rather than at startup because mobile and web platforms can suspend and resume an app, and the window may not exist yet when `main` runs. Every toolkit in this book, directly or indirectly, implements something like this handler.
+Version 0.30 replaced the old closure-based event loop with the `ApplicationHandler` trait. Windows are created in `resumed` rather than at startup because mobile and web platforms can suspend and resume an app, and the window may not exist yet when `main` runs. Every toolkit in this book, directly or indirectly, implements something like this handler. Note how it handles failure: handler methods return `()`, so they cannot use `?`. If creating the window fails, the app stores the error and exits the loop, and `main` returns it afterwards. The pattern is explained on the error-handling page.
 
 ::code winit-window/src/bin/two.rs
 

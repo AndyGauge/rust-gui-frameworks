@@ -5,6 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
+book-error = { path = "../book-error", features = ["ab-glyph"] }
 ab_glyph = "0.2"
 rusttype = "0.9"
 

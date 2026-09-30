@@ -1,6 +1,6 @@
+use book_error::Result;
 use xilem::core::lens;
 use xilem::view::{flex_row, label, text_button};
-use xilem::winit::error::EventLoopError;
 use xilem::{EventLoop, WidgetView, WindowOptions, Xilem};
 
 #[derive(Default)]
@@ -22,7 +22,7 @@ fn app_logic(_state: &mut AppState) -> impl WidgetView<AppState> + use<> {
     ))
 }
 
-fn main() -> Result<(), EventLoopError> {
+fn main() -> Result<()> {
     Xilem::new_simple(AppState::default(), app_logic, WindowOptions::new("Votes"))
         .run_in(EventLoop::with_user_event())?;
     Ok(())

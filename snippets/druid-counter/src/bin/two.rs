@@ -1,3 +1,4 @@
+use book_error::{Error, Result};
 use druid::widget::{Button, Flex, Label};
 use druid::{AppLauncher, Data, Lens, Widget, WidgetExt, WindowDesc};
 
@@ -21,8 +22,9 @@ fn ui() -> impl Widget<State> {
         .with_child(counter("dislikes").lens(State::dislikes))
 }
 
-fn main() {
+fn main() -> Result<()> {
     AppLauncher::with_window(WindowDesc::new(ui()))
         .launch(State { likes: 0, dislikes: 0 })
-        .unwrap();
+        .map_err(Error::other)?;
+    Ok(())
 }

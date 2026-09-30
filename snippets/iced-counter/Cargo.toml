@@ -5,6 +5,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
+book-error = { path = "../book-error", features = ["iced"] }
 iced = { version = "0.14", features = ["tokio"] }
 
 [workspace]

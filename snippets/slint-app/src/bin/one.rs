@@ -1,3 +1,5 @@
+use book_error::Result;
+
 slint::slint! {
     import { Button, VerticalBox } from "std-widgets.slint";
 
@@ -13,6 +15,9 @@ slint::slint! {
     }
 }
 
-fn main() {
-    App::new().unwrap().run().unwrap();
+fn main() -> Result<()> {
+    // Both creating the window and running the event loop can fail
+    // (for example with no display available), and both use `?`.
+    App::new()?.run()?;
+    Ok(())
 }

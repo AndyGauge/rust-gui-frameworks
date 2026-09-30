@@ -8,6 +8,7 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
+book-error = { path = "../book-error", features = ["wgpu", "wasm"] }
 wgpu = { version = "30", default-features = false, features = ["webgpu", "wgsl"] }
 wasm-bindgen = "0.2"
 wasm-bindgen-futures = "0.4"

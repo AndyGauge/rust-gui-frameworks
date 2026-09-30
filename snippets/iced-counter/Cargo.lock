@@ -309,6 +309,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+dependencies = [
+ "iced",
+]
+
+[[package]]
 name = "bumpalo"
 version = "3.20.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1170,6 +1177,7 @@ dependencies = [
 name = "iced-counter"
 version = "0.0.0"
 dependencies = [
+ "book-error",
  "iced",
 ]
 

@@ -149,6 +149,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+dependencies = [
+ "raw-window-handle",
+ "tauri",
+]
+
+[[package]]
 name = "brotli"
 version = "9.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3083,6 +3091,7 @@ dependencies = [
 name = "tauri-app"
 version = "0.0.0"
 dependencies = [
+ "book-error",
  "raw-window-handle",
  "serde",
  "tauri",

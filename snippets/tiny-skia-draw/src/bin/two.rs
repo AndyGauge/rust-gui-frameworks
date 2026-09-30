@@ -1,7 +1,8 @@
-use tiny_skia::{Color, LinearGradient, Paint, Point, Pixmap, Rect, SpreadMode, Transform, GradientStop};
+use book_error::{Context, Error, Result};
+use tiny_skia::{Color, GradientStop, LinearGradient, Paint, Pixmap, Point, Rect, SpreadMode, Transform};
 
-fn main() {
-    let mut pixmap = Pixmap::new(200, 100).unwrap();
+fn main() -> Result<()> {
+    let mut pixmap = Pixmap::new(200, 100).context("could not allocate a 200x100 pixmap")?;
     pixmap.fill(Color::from_rgba8(240, 240, 240, 255));
 
     let mut paint = Paint::default();
@@ -15,11 +16,12 @@ fn main() {
         SpreadMode::Pad,
         Transform::identity(),
     )
-    .unwrap();
+    .context("degenerate gradient (start and end points coincide)")?;
 
     // A software rasterizer: no GPU, no window. This is what resvg and
     // CPU fallbacks use to turn vector shapes into pixels.
-    let rect = Rect::from_xywh(10.0, 10.0, 180.0, 80.0).unwrap();
+    let rect = Rect::from_xywh(10.0, 10.0, 180.0, 80.0).context("rectangle has non-finite size")?;
     pixmap.fill_rect(rect, &paint, Transform::identity(), None);
-    pixmap.save_png("gradient.png").unwrap();
+    pixmap.save_png("gradient.png").map_err(Error::other)?;
+    Ok(())
 }

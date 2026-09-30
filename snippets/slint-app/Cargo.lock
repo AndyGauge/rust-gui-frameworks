@@ -534,6 +534,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "book-error"
+version = "0.0.0"
+dependencies = [
+ "slint",
+]
+
+[[package]]
 name = "borsh"
 version = "1.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3918,6 +3925,7 @@ dependencies = [
 name = "slint-app"
 version = "0.0.0"
 dependencies = [
+ "book-error",
  "slint",
 ]
 

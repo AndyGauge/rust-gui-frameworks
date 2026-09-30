@@ -6,4 +6,4 @@ The styling methods are not CSS. Each one sets a Taffy style, and Taffy computes
 
 ::code gpui-hello/src/bin/two.rs
 
-A caution about versions. The gpui on crates.io (0.2.x, published October 2025) is behind Zed's own repository: its lockfile still resolves the Blade graphics library, while Zed moved Linux rendering to wgpu in February 2026. On macOS it also compiles Metal shaders at build time, which needs Xcode's shader toolchain; the snippet above uses the `runtime_shaders` feature to defer that. Both examples compile against gpui 0.2.2 from crates.io.
+A caution about versions. The gpui on crates.io (0.2.x, published October 2025) is behind Zed's own repository: its lockfile still resolves the Blade graphics library, while Zed moved Linux rendering to wgpu in February 2026. On macOS it also compiles Metal shaders at build time, which needs Xcode's shader toolchain; the snippet above uses the `runtime_shaders` feature to defer that. Both examples compile against gpui 0.2.2 from crates.io. The startup closure returns nothing, so a failed `open_window` is reported and the app quits rather than panicking.
