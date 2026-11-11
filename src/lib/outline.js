@@ -1,7 +1,8 @@
 // The book. Each section carries a `year` (and optional `month`) — reading order is chronological.
 // Sequential page numbers (01, 02, …) are assigned after sort.
 //
-// DRAFT: dates are crates.io first-publish dates (crates.io API, Sep 2026) unless noted.
+// DRAFT: dates are crates.io first-publish dates (crates.io API, Sep 2026; 2026-wave entries Nov 2026) unless noted.
+// Git-only projects (NSH, Rune) use their GitHub repository creation date.
 // That is NOT always project birth — verify repo/announcement dates before printing.
 //
 // topic = the layer: Windowing, Rendering, Text, Layout, Accessibility, Framework, Web.
@@ -227,7 +228,7 @@ const raw = [
     status: 0.4, statusNote: 'Powers Zed; small outside ecosystem',
     year: 2022, month: 6, topic: 'Framework', kind: 'framework',
     gesture: 'A GUI framework built to make an editor fast.',
-    body: 'The `gpui` crate name dates to Jun 2022, but the 0.2.x public releases are recent (2025). gpui-component (Feb 2025) builds widgets on it. Zed moved its Linux renderer from Blade to wgpu in Feb 2026.',
+    body: 'The `gpui` crate name dates to Jun 2022, but the 0.2.x public releases are recent (2025). gpui-component (Feb 2025, from Longbridge, repo now `gpui-kit`) builds widgets on it. Zed moved its Linux renderer from Blade to wgpu in Feb 2026.',
     citation: CRATES + ' Check Zed’s own announcement for the real public date.'
   },
   {
@@ -361,6 +362,76 @@ const raw = [
     body: 'A winit-gtk4 backend merged on 16 Jul 2026 against the winit 0.31 beta. Menus and tray icons remain tied to GTK on Linux.',
     citation: 'July–Aug 2026 ecosystem report.',
     link: 'https://goldstrikearch.github.io/rust-gui-desktop-ecosystem-state/'
+  },
+
+  // ---- The 2026 wave (researched 11 Nov 2026) ----
+  {
+    title: 'Blinc: polish first',
+    id: 'blinc', crates: ['blinc_app'],
+    status: 0.0, statusNote: 'Active, small user base, no AccessKit',
+    year: 2026, month: 1, topic: 'Framework', kind: 'framework',
+    gesture: 'SDF rendering, springs and glass, from one codebase to every screen.',
+    body: 'blinc_app (14 Jan 2026) is a GPU-first toolkit with a Tailwind-like builder API, signals, first-class state machines and a shadcn-style component set, targeting desktop, mobile and WebGPU.',
+    citation: CRATES + ' The repository predates the first release (2022).',
+    link: 'https://github.com/project-blinc/Blinc'
+  },
+  {
+    title: 'Microsoft and Qt build bridges',
+    id: 'native-bridges', crates: ['windows-reactor', 'qtbridge'],
+    status: 0.2, statusNote: 'Vendor-backed previews',
+    year: 2026, month: 4, topic: 'Framework', kind: 'framework',
+    gesture: 'The owners of big native toolkits start courting Rust directly.',
+    body: 'windows-reactor (27 Apr 2026) builds WinUI 3 apps from Rust components. qtbridge (crates.io Aug 2025, public beta Jul 2026) exposes Rust objects to Qt Quick and QML. Neither uses the shared layers in this book.',
+    citation: CRATES + ' Qt blog, “A Cross-Platform Rust UI Framework via Qt’s Bridging Technology,” 1 Jul 2026.',
+    link: 'https://www.qt.io/blog/rust-ui-framework-via-bridging-technology'
+  },
+  {
+    title: 'zgui: Leptos signals, browser-engine pipeline',
+    id: 'zgui', crates: ['zgui', 'zgui-ui', 'cephal'],
+    status: 0.05, statusNote: 'Brand new, experimental, promising',
+    year: 2026, month: 10, topic: 'Framework', kind: 'framework',
+    gesture: 'Real CSS and fine-grained signals, with no webview and no HTML.',
+    body: 'zgui (repo Aug 2026, crates.io 15 Oct 2026) pairs Leptos’s reactive_graph with Stylo, its own incremental layout engine cephal, Parley and Vello on wgpu. It ships a shadcn/ui port, zgui-ui.',
+    citation: CRATES + ' Repository created 2 Aug 2026.',
+    link: 'https://github.com/zortax/zgui'
+  },
+  {
+    title: 'FerroUI: Avalonia, ported',
+    id: 'ferroui', crates: ['ferroui', 'ferroui-base'],
+    status: 0.0, statusNote: 'Brand new, very complete on paper',
+    year: 2026, month: 10, topic: 'Framework', kind: 'framework',
+    gesture: 'A whole C# toolkit, its XAML and its themes, carried into Rust.',
+    body: 'FerroUI (15 Oct 2026) ports Avalonia’s object model, styling, data binding, XAML and themes, renders through Skia and uses none of the shared layers in this book.',
+    citation: CRATES,
+    link: 'https://github.com/wieslawsoltes/FerroUI'
+  },
+  {
+    title: 'Native Shell: native views, TSX at run time',
+    id: 'nsh', crates: [],
+    status: 0.1, statusNote: 'Company-backed, early, git and CLI only',
+    year: 2026, month: 10, topic: 'Framework', kind: 'framework',
+    gesture: 'One component tree, drawn with each platform’s own widgets.',
+    body: 'Longbridge’s NSH (repo 14 Oct 2026) renders with UIKit, Android views, AppKit, Win32, GTK 4, HTML, GPUI or a terminal, and can load sandboxed TSX screens at run time.',
+    citation: 'GitHub repository created 14 Oct 2026. Not on crates.io.',
+    link: 'https://github.com/longbridge/nsh'
+  },
+  {
+    title: 'Rune: a toolkit agents can drive',
+    id: 'rune', crates: [],
+    status: 0.15, statusNote: 'Huge attention, pre-release, git only',
+    year: 2026, month: 10, topic: 'Framework', kind: 'framework',
+    gesture: 'Springs on every property, and every app runs headless.',
+    body: 'Anomaly’s Rune (repo 22 Oct 2026) is an Elm-shaped, spring-animated GPU toolkit on winit, wgpu 30, Taffy, Parley and AccessKit, designed to be tested and driven by coding agents.',
+    citation: 'GitHub repository created 22 Oct 2026. Not on crates.io; quoted, not compiled.',
+    link: 'https://github.com/anomalyco/rune'
+  },
+  {
+    title: 'The 2026 wave',
+    id: 'wave-2026', crates: ['winit', 'wgpu', 'taffy'],
+    year: 2026, month: 11, topic: 'Ecosystem', kind: 'primitive',
+    gesture: 'Agents, shadcn, CSS without a browser, and companies paying for it.',
+    body: 'What the 2026 newcomers have in common, where they agree on the shared layers and where they diverge, plus Tessera, Ply and QuickGUI.',
+    citation: 'GitHub and crates.io, 11 Nov 2026; lockfiles from snippets/.'
   }
 ];
 

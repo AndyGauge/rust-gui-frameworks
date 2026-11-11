@@ -11,7 +11,7 @@
     <div class="head">In the ecosystem <span>crates.io, {eco.asOf}</span></div>
     {#each rows as r}
       <dl>
-        <dt><code>{r.name}</code> <span class="v">{r.ver}</span></dt>
+        <dt><code>{r.name}</code> <span class="v">{r.ver}{#if r.asOf && r.asOf !== eco.asOf} · as of {r.asOf}{/if}</span></dt>
         <dd>
           <strong>{fmt(r.revdeps)}</strong> crates depend on it
           {#if r.usedBy.length}· used directly by <em>{r.usedBy.join(', ')}</em>{/if}

@@ -1,0 +1,13 @@
+[package]
+name = "zgui-counter"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+book-error = { path = "../book-error" }
+zgui = "0.1"
+zgui-ui = "0.1"
+zgui-ui-tokens = "0.1"
+
+[workspace]

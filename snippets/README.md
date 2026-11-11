@@ -13,6 +13,7 @@ versions in each package's `Cargo.lock`. The pages load these files directly
 - Blocks marked "illustrative" in the book are not here; they are inline in
   `content/*.md`.
 - Some examples are macOS-specific (glutin's display, font paths). Everything
-  was checked on macOS, rustc 1.95.0.
+  was checked on macOS, rustc 1.95.0. `zgui-counter`, `blinc-app` and `ferroui-app` were added on
+  2026-11-11 and checked with rustc 1.99.0.
 
 Shared build cache: `CARGO_TARGET_DIR=/some/dir python3 verify.py`

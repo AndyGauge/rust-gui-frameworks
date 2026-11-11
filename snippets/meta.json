@@ -6,6 +6,38 @@
     "0.25.1"
    ]
   },
+  "blinc-app": {
+   "fontdb": [
+    "0.22.0"
+   ],
+   "glow": [
+    "0.16.0"
+   ],
+   "kurbo": [
+    "0.11.3"
+   ],
+   "raw-window-handle": [
+    "0.6.2"
+   ],
+   "skrifa": [
+    "0.22.3"
+   ],
+   "swash": [
+    "0.1.19"
+   ],
+   "taffy": [
+    "0.14.0"
+   ],
+   "tiny-skia": [
+    "0.11.4"
+   ],
+   "wgpu": [
+    "26.0.1"
+   ],
+   "winit": [
+    "0.30.13"
+   ]
+  },
   "book-error": {
    "accesskit": [
     "0.24.1"
@@ -196,6 +228,7 @@
     "0.30.13"
    ]
   },
+  "ferroui-app": {},
   "floem-counter": {
    "cosmic-text": [
     "0.12.1"
@@ -570,7 +603,49 @@
     "0.30.13"
    ]
   },
-  "yew-counter": {}
+  "yew-counter": {},
+  "zgui-counter": {
+   "accesskit": [
+    "0.24.1"
+   ],
+   "glow": [
+    "0.17.0"
+   ],
+   "harfrust": [
+    "0.12.0"
+   ],
+   "kurbo": [
+    "0.13.1"
+   ],
+   "parley": [
+    "0.11.1"
+   ],
+   "peniko": [
+    "0.6.1"
+   ],
+   "raw-window-handle": [
+    "0.6.2"
+   ],
+   "skrifa": [
+    "0.42.1",
+    "0.44.0"
+   ],
+   "swash": [
+    "0.2.10"
+   ],
+   "tiny-skia": [
+    "0.11.4"
+   ],
+   "vello": [
+    "0.9.0"
+   ],
+   "wgpu": [
+    "29.0.4"
+   ],
+   "winit": [
+    "0.30.13"
+   ]
+  }
  },
  "packages": {
   "accesskit-tree": {
@@ -582,6 +657,13 @@
     "one": "2 nodes, focus on #1",
     "two": "CheckBox toggled=Some(True)"
    }
+  },
+  "blinc-app": {
+   "deps": {
+    "blinc_app": "0.6"
+   },
+   "ok": true,
+   "output": {}
   },
   "book-error": {
    "deps": {},
@@ -630,6 +712,13 @@
    "output": {
     "two": "1 meshes, 1 texture updates"
    }
+  },
+  "ferroui-app": {
+   "deps": {
+    "ferroui": "=0.4.0"
+   },
+   "ok": true,
+   "output": {}
   },
   "floem-counter": {
    "deps": {
@@ -814,6 +903,15 @@
   "yew-counter": {
    "deps": {
     "yew": "0.23"
+   },
+   "ok": true,
+   "output": {}
+  },
+  "zgui-counter": {
+   "deps": {
+    "zgui": "0.1",
+    "zgui-ui": "0.1",
+    "zgui-ui-tokens": "0.1"
    },
    "ok": true,
    "output": {}

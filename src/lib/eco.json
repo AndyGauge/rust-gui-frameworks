@@ -32,6 +32,18 @@
    ],
    "ver": "0.13.0"
   },
+  "blinc_app": {
+   "asOf": "2026-11-11",
+   "deps": [
+    "taffy",
+    "wgpu",
+    "winit"
+   ],
+   "downloads": 1070,
+   "revdeps": 1,
+   "usedBy": [],
+   "ver": "0.6.0"
+  },
   "blitz-dom": {
    "deps": [
     "accesskit",
@@ -47,6 +59,16 @@
     "dioxus-native"
    ],
    "ver": "0.2.4"
+  },
+  "cephal": {
+   "asOf": "2026-11-11",
+   "deps": [],
+   "downloads": 1188,
+   "revdeps": 1,
+   "usedBy": [
+    "zgui"
+   ],
+   "ver": "0.2.0"
   },
   "cosmic-text": {
    "deps": [
@@ -129,6 +151,27 @@
     "eframe"
    ],
    "ver": "0.36.2"
+  },
+  "ferroui": {
+   "asOf": "2026-11-11",
+   "deps": [
+    "harfbuzz",
+    "skia-safe"
+   ],
+   "downloads": 147,
+   "revdeps": 0,
+   "usedBy": [],
+   "ver": "0.4.0"
+  },
+  "ferroui-base": {
+   "asOf": "2026-11-11",
+   "deps": [],
+   "downloads": 1446,
+   "revdeps": 62,
+   "usedBy": [
+    "ferroui"
+   ],
+   "ver": "0.4.0"
   },
   "floem": {
    "deps": [
@@ -250,6 +293,14 @@
    "revdeps": 29,
    "usedBy": [],
    "ver": "0.8.0"
+  },
+  "qtbridge": {
+   "asOf": "2026-11-11",
+   "deps": [],
+   "downloads": 4764,
+   "revdeps": 0,
+   "usedBy": [],
+   "ver": "0.4.1"
   },
   "raw-window-handle": {
    "deps": [
@@ -430,6 +481,16 @@
    ],
    "ver": "30.0.1"
   },
+  "windows-reactor": {
+   "asOf": "2026-11-11",
+   "deps": [
+    "windows"
+   ],
+   "downloads": 7805,
+   "revdeps": 4,
+   "usedBy": [],
+   "ver": "0.100.0"
+  },
   "winit": {
    "deps": [
     "js-sys",
@@ -483,6 +544,31 @@
    "revdeps": 318,
    "usedBy": [],
    "ver": "0.23.0"
+  },
+  "zgui": {
+   "asOf": "2026-11-11",
+   "deps": [
+    "accesskit",
+    "parley",
+    "stylo",
+    "vello",
+    "wgpu",
+    "winit"
+   ],
+   "downloads": 176,
+   "revdeps": 6,
+   "usedBy": [],
+   "ver": "0.1.0"
+  },
+  "zgui-ui": {
+   "asOf": "2026-11-11",
+   "deps": [
+    "zgui"
+   ],
+   "downloads": 38,
+   "revdeps": 0,
+   "usedBy": [],
+   "ver": "0.1.0"
   }
  }
 }
