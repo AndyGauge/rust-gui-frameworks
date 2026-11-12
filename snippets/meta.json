@@ -1,5 +1,5 @@
 {
- "checked": "2026-09-30",
+ "checked": "2026-11-12",
  "locks": {
   "accesskit-tree": {
    "accesskit": [
@@ -873,7 +873,7 @@
    },
    "ok": true,
    "output": {
-    "one": "Intel(R) Iris(TM) Plus Graphics via Metal",
+    "one": "Apple M3 Pro via Metal",
     "two": "no software adapter here: No suitable graphics adapter found; noop not requested, vulkan support not compiled in, metal had no fallback adapters, dx12 support not compiled in, gl not requested, webgpu support not compiled in"
    }
   },
@@ -917,5 +917,5 @@
    "output": {}
   }
  },
- "rustc": "rustc 1.95.0 (59807616e 2026-04-14)"
+ "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)"
 }
