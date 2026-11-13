@@ -4,7 +4,7 @@ import json
 m = json.load(open("meta.json"))["locks"]
 ROWS = [("egui","egui-app"),("iced","iced-counter"),("Slint","slint-app"),("Xilem","xilem-counter"),
         ("Dioxus Native","dioxus-native-app"),("Freya","freya-app"),("Floem","floem-counter"),("gpui","gpui-hello"),
-        ("zgui","zgui-counter"),("Blinc","blinc-app"),("FerroUI","ferroui-app")]
+        ("zgui","zgui-counter"),("Blinc","blinc-app"),("FerroUI","ferroui-app"),("Whisker","whisker-counter")]
 COLS = ["winit","wgpu","taffy","accesskit","parley","cosmic-text"]
 def cell(pkg, lib):
     v = sorted(set(m.get(pkg, {}).get(lib, [])))

@@ -1,0 +1,15 @@
+[package]
+name = "whisker-counter"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+# A Whisker app is a library: `whisker run ios|android|web|macos` generates
+# the native project and links it.
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+whisker = "0.18"
+
+[workspace]

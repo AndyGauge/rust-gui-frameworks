@@ -1,0 +1,17 @@
+[package]
+name = "rune-hello"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+book-error = { path = "../book-error" }
+# Not on crates.io (the name belongs to an unrelated scripting language): pin a rev of `dev`.
+rune = { git = "https://github.com/anomalyco/rune", rev = "cd83affab6684e573c34b65ccd9722a98a13ad3c" }
+
+# Rune patches wgpu-hal, and a dependency's [patch] doesn't reach the app that
+# depends on it, so every app repeats it. Cargo finds the vendored crate in the same repo.
+[patch.crates-io]
+wgpu-hal = { git = "https://github.com/anomalyco/rune", rev = "cd83affab6684e573c34b65ccd9722a98a13ad3c" }
+
+[workspace]

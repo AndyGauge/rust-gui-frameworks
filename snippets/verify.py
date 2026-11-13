@@ -9,7 +9,7 @@ import json, os, re, subprocess, sys, datetime
 
 WATCH = ["winit","wgpu","taffy","accesskit","parley","cosmic-text","vello","skrifa","swash",
          "tiny-skia","raw-window-handle","kurbo","peniko","harfrust","fontdb","glow","glutin","wry","tao"]
-WASM = {"yew-counter","leptos-counter","wasm-bindgen-dom","wgpu-web"}
+WASM = {"yew-counter","leptos-counter","wasm-bindgen-dom","wgpu-web","whisker-counter"}
 RUN = {
     "semver-rust1": ["one","two"], "wgpu-device": ["one","two"], "taffy-flex": ["one","two"],
     "accesskit-tree": ["one","two"], "cosmic-shape": ["one","two"], "parley-layout": ["one","two"],
@@ -24,7 +24,7 @@ for d in sorted(os.listdir(".")):
     if d == "book-error":
         args = ["cargo","check","--quiet","--all-features"]
     else:
-        args = ["cargo","check","--quiet"] + ([] if d in ("tauri-app","slint-file","wgpu-web") else ["--bins"])
+        args = ["cargo","check","--quiet"] + ([] if d in ("tauri-app","slint-file","wgpu-web","whisker-counter") else ["--bins"])
     ok = sh(args, d).returncode == 0
     if d in WASM:
         ok = ok and sh(args + ["--target","wasm32-unknown-unknown"], d).returncode == 0

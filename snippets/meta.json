@@ -550,6 +550,11 @@
     "30.0.1"
    ]
   },
+  "whisker-counter": {
+   "taffy": [
+    "0.13.0"
+   ]
+  },
   "winit-window": {
    "raw-window-handle": [
     "0.6.2"
@@ -882,6 +887,13 @@
     "wasm-bindgen": "0.2",
     "wasm-bindgen-futures": "0.4",
     "wgpu": "30"
+   },
+   "ok": true,
+   "output": {}
+  },
+  "whisker-counter": {
+   "deps": {
+    "whisker": "0.18"
    },
    "ok": true,
    "output": {}

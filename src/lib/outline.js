@@ -354,6 +354,16 @@ const raw = [
     link: 'https://dioxuslabs.com/blog/joining-cognition/'
   },
   {
+    title: 'Whisker: one Rust runtime, native views',
+    id: 'whisker', crates: ['whisker'],
+    status: 0.1, statusNote: 'Pre-alpha, fast-moving, one main author',
+    year: 2026, month: 5, topic: 'Framework', kind: 'framework',
+    gesture: 'Rust decides the layout. UIKit, Android views, WinUI and GTK draw it.',
+    body: 'Whisker (crates.io 14 May 2026) runs a shared reactive runtime and Taffy layout in Rust and hands each frame to a native Host: UIKit, AppKit, Android views, WinUI 3, GTK 4 or the DOM. It hot-patches running apps with a fork of Dioxus’s Subsecond.',
+    citation: CRATES + ' Repository created 13 May 2026.',
+    link: 'https://github.com/whiskerrs/whisker'
+  },
+  {
     title: 'Tauri gains a winit-gtk4 backend',
     id: 'tauri-winit-gtk4', crates: ['tauri', 'tao'],
     status: 0.2, statusNote: 'Merged but tied to a beta winit',

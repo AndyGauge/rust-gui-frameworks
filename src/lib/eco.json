@@ -481,6 +481,17 @@
    ],
    "ver": "30.0.1"
   },
+  "whisker": {
+   "asOf": "2026-11-13",
+   "deps": [
+    "gtk4",
+    "taffy"
+   ],
+   "downloads": 6257,
+   "revdeps": 35,
+   "usedBy": [],
+   "ver": "0.18.1"
+  },
   "windows-reactor": {
    "asOf": "2026-11-11",
    "deps": [
